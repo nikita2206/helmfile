@@ -215,7 +215,7 @@ func TestAppendDryRunFlags(t *testing.T) {
 				flags:    []string{},
 				dryRun:   "client",
 				helm:     testutil.NewVersionHelmExec("3.13.0"),
-				expected: []string{"--dry-run", "client"},
+				expected: []string{"--dry-run=client"},
 			},
 		},
 		{
@@ -224,7 +224,7 @@ func TestAppendDryRunFlags(t *testing.T) {
 				flags:    []string{},
 				dryRun:   "",
 				helm:     testutil.NewVersionHelmExec("3.13.0"),
-				expected: []string{"--dry-run", "client"},
+				expected: []string{},
 			},
 		},
 		{
@@ -233,7 +233,7 @@ func TestAppendDryRunFlags(t *testing.T) {
 				flags:    []string{},
 				dryRun:   "server",
 				helm:     testutil.NewVersionHelmExec("3.13.0"),
-				expected: []string{"--dry-run", "server"},
+				expected: []string{"--dry-run=server"},
 			},
 		},
 		{
